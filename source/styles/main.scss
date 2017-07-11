@@ -1,6 +1,7 @@
 @import "components/resest";
 @import "components/fonts";
 @import "components/vars";
+@import "../libs/jquery-ui.min";
 body {
     font: {
         family: Roboto-Light;
@@ -11,7 +12,14 @@ body {
 section {
     margin-top: 58px;
 }
-
+.h1 {
+    font: {
+        family: Roboto-Thin;
+        size: 70px;
+    }
+    color:$maincolor;
+    margin-top: 113px;
+}
 .h2 {
     font-size: 30px;
     color: $maincolor;
@@ -58,20 +66,15 @@ section {
     }
 }
 
+//main
 main {
     text-align: center;
     margin: 0 auto;
     max-width: 768px;
+    outline: 2px solid red;
 }
 
-.h1 {
-    font: {
-        family: Roboto-Thin;
-        size: 70px;
-    }
-    color:$maincolor;
-    margin-top: 113px;
-}
+
 
 //info
 .info {
@@ -90,9 +93,57 @@ main {
             text-align: center;
         }
         select {
+            text-align: center;
+            text-align-last: center; 
             width: 320px;
+            color:#c7c7c7;
+        }
+        option {
+            color:$maincolor;
+            text-align: center;
         }
     }
 }
 
+
+//about
+.experience {
+    &-content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        .column {
+            display: flex;
+            flex-direction: column;
+            label {
+                margin-top: 10px;
+                text-align: left;
+            }
+        }
+    }
+}
+input[type=checkbox] {
+    display: none;
+}
+.column label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+    border-radius: 10%;
+    vertical-align: middle;
+    text-align: left;
+    margin-right: 10px;
+}
+input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    font-size: 15px;
+    color: black;
+    text-align: center;
+}
 @import "components/media";
+
+.ui-slider-range {
+    background-color: blue !important;
+}
