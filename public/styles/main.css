@@ -1648,9 +1648,6 @@ body {
   font-family: Roboto-Light;
   font-size: 16px; }
 
-section {
-  margin-top: 58px; }
-
 .h1 {
   font-family: Roboto-Thin;
   font-size: 70px;
@@ -1694,18 +1691,20 @@ section {
   text-decoration: none; }
 
 .header-nav a:hover {
-  color: #86c9ef; }
+  color: #435993; }
 
 main {
   text-align: center;
   margin: 0 auto;
-  max-width: 768px;
-  outline: 2px solid red; }
+  max-width: 768px; }
+
+.info {
+  margin-top: 58px; }
 
 .info .info-form {
   margin-top: 47px; }
 
-.info .info-form input, .info .info-form select {
+.info .info-form input {
   width: 520px;
   height: 60px;
   font-family: Roboto-Regular;
@@ -1714,53 +1713,101 @@ main {
   margin-bottom: 25px;
   text-align: center; }
 
-.info .info-form select {
+.info .info-form .form-select {
+  position: relative;
   text-align: center;
   text-align-last: center;
   width: 320px;
+  color: black;
+  height: 60px;
+  margin: 0 auto 25px auto; }
+
+.info .info-form .form-select:after {
+  content: "";
+  pointer-events: none;
+  width: 16px;
+  height: 11px;
+  display: inline-block;
+  background-image: url("../images/arrow-down.png");
+  position: absolute;
+  top: 43%;
+  right: 18px;
+  z-index: 1;
+  margin-top: -2px; }
+
+.info .info-form .form-select select {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e5e5e5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: Roboto-Regular;
+  font-size: 24px;
   color: #c7c7c7; }
+
+.info .info-form .form-select select::-ms-expand {
+  display: none; }
+
+.info .info-form .form-select select:focus {
+  outline: 0;
+  border-color: #2cb0d8; }
+
+.info .info-form .form-select select:hover {
+  cursor: pointer; }
 
 .info .info-form option {
   color: #1c1c1c;
   text-align: center; }
 
+.experience {
+  margin-top: 50px; }
+
 .experience-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px; }
+  margin-top: 33px; }
 
 .experience-content .column {
   display: flex;
   flex-direction: column; }
 
-.experience-content .column label {
-  margin-top: 10px;
-  text-align: left; }
-
-input[type=checkbox] {
+.experience-content .column input[type=checkbox] {
   display: none; }
 
-.column label:before {
+.experience-content .column label {
+  margin-top: 14px;
+  text-align: left; }
+
+.experience-content .column label:before {
   content: "";
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 1px solid red;
+  border: 1px solid #435993;
   border-radius: 10%;
   vertical-align: middle;
   text-align: left;
   margin-right: 10px; }
 
-input[type=checkbox]:checked + label:before {
+.experience-content .column input[type=checkbox]:checked + label:before {
   content: "\2713";
-  font-size: 15px;
+  font-size: 18px;
+  line-height: 18px;
   color: black;
   text-align: center; }
+
+.js {
+  margin-top: 129px; }
 
 @media only screen and (max-width: 768px) {
   .experience-content {
     flex-direction: column;
     align-items: center; } }
 
+.ui-slider {
+  border-radius: 100% 0 0 0;
+  background-color: silver;
+  border: 0; }
+
 .ui-slider-range {
-  background-color: blue !important; }
+  background-color: blue; }

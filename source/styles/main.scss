@@ -9,9 +9,6 @@ body {
     }
 }
 
-section {
-    margin-top: 58px;
-}
 .h1 {
     font: {
         family: Roboto-Thin;
@@ -20,6 +17,7 @@ section {
     color:$maincolor;
     margin-top: 113px;
 }
+
 .h2 {
     font-size: 30px;
     color: $maincolor;
@@ -60,7 +58,7 @@ section {
             color: black;
             text-decoration: none;
             &:hover {
-                color: #86c9ef;
+                color: $accentcolor;
             }
         }
     }
@@ -71,17 +69,15 @@ main {
     text-align: center;
     margin: 0 auto;
     max-width: 768px;
-    outline: 2px solid red;
+    // outline: 2px solid red;
 }
-
-
 
 //info
 .info {
+    margin-top: 58px;
     .info-form {
         margin-top: 47px;
-        input,
-        select {
+        input {
             width: 520px;
             height: 60px;
             font: {
@@ -92,58 +88,121 @@ main {
             margin-bottom: 25px;
             text-align: center;
         }
-        select {
+        .form-select {
+            position: relative;
             text-align: center;
-            text-align-last: center; 
+            text-align-last: center;
             width: 320px;
-            color:#c7c7c7;
+            color: black;
+            height: 60px;
+            margin: 0 auto 25px auto;
+            &:after {
+                content: "";
+                pointer-events: none;
+                width: 16px;
+                height: 11px;
+                display: inline-block;
+                background-image: url("../images/arrow-down.png");
+                position: absolute;
+                top: 43%;
+                right: 18px;
+                z-index: 1;
+                margin-top: -2px;
+            }
+            select {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #e5e5e5;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                font: {
+                    family: Roboto-Regular;
+                    size: 24px;
+                }
+                color:#c7c7c7;
+            }
+        }
+        .form-select select::-ms-expand {
+            display: none;
+        }
+        .form-select select:focus {
+            outline: 0;
+            border-color: #2cb0d8;
+        }
+        .form-select select:hover {
+            cursor: pointer;
         }
         option {
-            color:$maincolor;
+            color: $maincolor;
             text-align: center;
         }
     }
 }
 
-
 //about
 .experience {
+    margin-top: 50px;
     &-content {
         display: flex;
         justify-content: space-between;
-        margin-top: 30px;
+        margin-top: 33px;
         .column {
             display: flex;
             flex-direction: column;
+            input[type=checkbox] {
+                display: none;
+            }
             label {
-                margin-top: 10px;
+                margin-top: 14px;
                 text-align: left;
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid $accentcolor;
+                    border-radius: 10%;
+                    vertical-align: middle;
+                    text-align: left;
+                    margin-right: 10px;
+                }
+            }
+            input[type=checkbox]:checked+label:before {
+                content: "\2713";
+                font-size: 18px;
+                line-height: 18px;
+                color: black;
+                text-align: center;
             }
         }
     }
 }
-input[type=checkbox] {
-    display: none;
+
+.js {
+    margin-top: 129px;
 }
-.column label:before {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 1px solid red;
-    border-radius: 10%;
-    vertical-align: middle;
-    text-align: left;
-    margin-right: 10px;
-}
-input[type=checkbox]:checked + label:before {
-    content: "\2713";
-    font-size: 15px;
-    color: black;
-    text-align: center;
-}
+
 @import "components/media";
+.ui-slider {
+    // width: 768px;
+    // border: 2px solid red;
+    // border-bottom-right-radius: 0;
+    // border-left: 768px solid transparent;
+    // border-bottom: 10px solid red;
+    border-radius: 100% 0 0 0;
+    background-color: silver;
+    border: 0;
+}
 
 .ui-slider-range {
-    background-color: blue !important;
+    background-color: blue;
 }
+
+// .test {
+//     margin-top: 20px;
+//     width: 500px;
+//     height: 50px;
+//     position: absolute;
+//     background-color: blue;
+//     clip: rect(10px, 290px, 190px, 10px);
+// }
