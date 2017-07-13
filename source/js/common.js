@@ -9,15 +9,24 @@ $(".slider").slider({
     range: "min",
     value: 20,
     step: 5,
-    animate: "slow"
+    animate: "slow",
+    slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value + "%");
+      }
 })
 
 $(".slider-v").slider({
     orientation: "vertical",
     min: 0,
     max: 100,
-    range: "max",
+    range: "min",
     value: 20,
     step: 5,
-    animate: "fast"
+    animate: "fast",
+    slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value + "%");
+      }
 })
+
+$("#amount").val($( ".slider" ).slider( "value")+"%");
+$("#amount2").val($( ".slide-v" ).slider( "value")+"%");

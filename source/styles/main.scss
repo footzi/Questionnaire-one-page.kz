@@ -81,11 +81,10 @@ body {
 }
 
 //main
-main {
+.main {
     text-align: center;
     margin: 0 auto;
     max-width: 768px;
-    // outline: 2px solid red;
 }
 
 //info
@@ -135,7 +134,7 @@ main {
                     family: Roboto-Regular;
                     size: 24px;
                 }
-                color:#c7c7c7;
+                // color:#c7c7c7;
             }
         }
         .form-select select::-ms-expand {
@@ -194,10 +193,10 @@ main {
     }
 }
 
+//js
 .js {
     margin-top: 129px;
 }
-
 .js-slider {
     margin-top: 45px;
     .slider {
@@ -249,6 +248,14 @@ main {
             }
         }
     }
+    &-level {
+        margin-top: 20px;
+        input {
+            margin-left: 10px;
+            border:0;
+            width: 50px;
+        }
+    }
 }
 
 .slider {
@@ -259,9 +266,9 @@ main {
         top: 5px;
         display: block;
         width: 23px;
-        height: 27px;
+        height: 29px;
         background: transparent;
-        background-image: url("../images/cursor.png");
+        background: url("../images/cursor.png") no-repeat;
         margin-left: -.7em;
         border: 0;
         &:focus {
@@ -269,7 +276,6 @@ main {
         }
     }
 }
-
 .slider {
     .ui-state-active,
     .ui-widget-content .ui-state-active {
@@ -278,4 +284,60 @@ main {
     }
 }
 
+//about 
+.about {
+    margin-top: 30px;
+    &-content {
+        width: 520px;
+        margin: 0 auto;
+        &-text {
+            margin-top: 10px;
+        }
+        textarea {
+            text-align: left;
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px 0 0 10px;
+
+        }
+    }
+}
+.submit {
+    margin-top: 20px;
+    button {
+        width: 70px;
+        height: 30px;
+        border-radius:10%;
+        background-color: $accentcolor;
+        border:0;
+        color:white;
+    }
+    
+}
 @import "components/media";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
