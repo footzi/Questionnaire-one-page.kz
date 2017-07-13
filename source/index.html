@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire-one-page.kz</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
     <header class="header">
         <nav>
@@ -15,10 +17,10 @@
                 <span></span>
             </a>
             <ul class="header-nav">
-                <li><a href="#">Личная информация</a></li>
-                <li><a href="#">Опыт</a></li>
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">О себе</a></li>
+                <li><a href="#" data-scroll=".info">Личная информация</a></li>
+                <li><a href="#" data-scroll=".experience">Опыт</a></li>
+                <li><a href="#" data-scroll=".js">JavaScript</a></li>
+                <li><a href="#" data-scroll=".about">О себе</a></li>
             </ul>
         </nav>
     </header>
@@ -57,7 +59,7 @@
                         </div>
                         <div class="column">
                             <input id="4" type="checkbox" value="semantics" checked><label for="4">Верстаю семантично</label>
-                            <input id="5" type="checkbox" value="ES2015" checked><label for="5">ES2015/2016</label>
+                            <input id="5" type="checkbox" value="ES2015"><label for="5">ES2015/2016</label>
                             <input id="6" type="checkbox" value="Gulp" checked><label for="6">Gulp/GRUNT</label>
                         </div>
                         <div class="column">
@@ -79,21 +81,20 @@
                                 <p>Пишу сложный JS c нуля</p>
                             </div>
                             <div class="slider"></div>
-                            <div class="slider-v"></div>    
+                            <div class="slider-v"></div>
                         </div>
                         <div class="js-slider-level">
                             <label for="amount">Уровень:</label>
-                            <input id="amount" type="text" name="level">  
+                            <input id="amount" type="text" name="level">
                         </div>
                     </div>
                 </section>
                 <section class="about">
-                    <img src="images/icon3.png" alt="О знании JS">
+                    <img src="images/icon4.png" alt="О знании JS">
                     <h2 class="h2">Расскажите о себе</h2>
                     <div class="about-content">
                         <p class="about-content-text">Напишите несколько предложений, чем привлекла наша вакансия, и что вы ждете от работы у нас.</p>
-                        <textarea  rows="10" name="about" placeholder="Понравилась тем, что...">
-                        От работы я ожидаю, в первую очередь получить более глубокие знания в web технологиях, а так же научиться работать в команде. Главным критерием выбора именно Вашей вакансии стала возможность работать удаленно, так же частичная занятось.
+                        <textarea rows="15" name="about" placeholder="Понравилась тем, что..." readonly>Я начинающий web-разработчик. Легко и быстро обучаюсь, очень ответственно подхожу к своей работе. Есть большое желание развиваться в сфере web разработки и не только, а также стать профессионалом своего дела. В ближайшем будущем планирую активно развиваться в сфере frontend'a и изучать СMS (ModX, OpenCart, Bitrix), Node.js, базы данных (MongoDB и MySQL), стандарт ES2016/17. В первую очередь от работы я ожидаю получить более глубокие знания в web технологиях, а так же научиться работать в команде. Главным критерием выбора именно Вашей вакансии стала возможность работать удаленно, так же частичная занятость.
                         </textarea>
                     </div>
                 </section>
@@ -105,5 +106,5 @@
     </main>
     <script type="text/javascript" src="js/main.min.js"></script>
 </body>
-</html>
 
+</html>
