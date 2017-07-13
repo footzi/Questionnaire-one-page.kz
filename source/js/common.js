@@ -1,9 +1,23 @@
-$(".ui-slider").slider({
+$(".nav-button").on("click", function() {
+    $(".header-nav").fadeToggle();
+})
+
+
+$(".slider").slider({
     min: 0,
     max: 100,
     range: "min",
-    value: 10
+    value: 20,
+    step: 5,
+    animate: "slow"
 })
-$(".nav-button").on("click", function() {
-	$(".header-nav").fadeToggle();
+
+$(".slider-v").slider({
+    orientation: "vertical",
+    min: 0,
+    max: 100,
+    range: "max",
+    value: 20,
+    step: 5,
+    animate: "fast"
 })

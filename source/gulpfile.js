@@ -7,7 +7,6 @@ var imagemin = require("gulp-imagemin");
 var pngquant = require("imagemin-pngquant");
 var notify = require('gulp-notify');
 var htmlmin = require('gulp-htmlmin');
-var plumber = require('gulp-plumber');
 
 //html
 gulp.task('html', function() {
@@ -20,14 +19,10 @@ gulp.task('sass', function() {
     return gulp.src('styles/**/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(sass({}))
-        // .on('error', notify.onError({
-        //     title: 'SASS Compilation Failed',
-        //     message: '<%= error.message %>'
-        // }))
-        .pipe(plumber({errorHandler:notify.onError({
+        .on('error', notify.onError({
             title: 'SASS Compilation Failed',
-             message: '<%= error.message %>'
-            })}))
+            message: '<%= error.message %>'
+        }))
         .pipe(browserSync.reload({
             stream: true
         }))
