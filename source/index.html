@@ -39,9 +39,11 @@
 
                         <div class="info-form-select">
                             <select name="year">
-                                <option disabled>Год Рождения</option>
+                                <option id="testinput" disabled></option>
                                 <option selected value="1990">1990</option>
-                                <option value="1991">1991</option>
+                                <option value="1991">
+                                    <span>1991</span>
+                                </option>
                                 <option value="1992">1992</option>
                                 <option value="1993">1993</option>
                                 <option value="1994">1994</option>
@@ -117,7 +119,15 @@
             </form>
         </div>
     </main>
+
+    <input id="drtest" placeholder="year">
+        <!-- <span>Год рождения</span> --> 
+        <img id="open" src="images/arrow-down.png" alt="">
+    <div class="list">
+        <p data-list="Год-рождения">Год рождения</p>
+        <p data-list="1990">1990</p>
+        <p data-list="1991">1991</p>
+    </div> 
     <script type="text/javascript" src="js/main.min.js"></script>
 </body>
-
 </html>

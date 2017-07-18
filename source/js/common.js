@@ -67,24 +67,35 @@ $("#amount2").val($(".slide-v").slider("value") + "%");
 
 $(".info-form-input input").focus(function() {
     $(this).siblings("span").addClass("span-top");
-}).blur(function() {
-    $(this).siblings("span").removeClass("span-top");
 })
 
-// $(".info-form-input input").each(function() {
-//     var value = $(this).val();
-//     if (value != "") {
-//         $(this).siblings("span").addClass("span-top")
-//         console.log("пустой")
-//     } else {
-//         $(this).siblings("span").removeClass("span-top")
-//     }
-// })
 $(".info-form-input input").each(function() {
     var value = $(this).val();
     if (value != "") {
-        $(this).siblings("span").addClass("span-top")
+        $(this).siblings("span").addClass("span-top");
     } else {
-        $(this).siblings("span").removeClass("span-top")
+        $(this).siblings("span").removeClass("span-top");
     }
+})
+
+$(".info-form-input input").change(function() {
+    var value = $(this).val();
+    if (value != "") {
+        $(this).siblings("span").addClass("span-top");
+    } else {
+        $(this).siblings("span").removeClass("span-top");
+    }
+})
+
+
+
+$("#drtest").on("click", function() {
+    $(".list").fadeToggle();
+})
+$(".list p").on("click", function() {
+    var value=$(this).attr("data-list");
+    // $("#drtest span").empty().html(value);
+    var valueInput=$("#drtest input").val();
+    valueInput=value
+
 })

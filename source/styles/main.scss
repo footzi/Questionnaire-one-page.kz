@@ -127,7 +127,7 @@ input:focus::-webkit-input-placeholder {}
                 font-size: 24px;
                 color: #d9d9d9;
                 position: absolute;
-                transition: all 0.5s;
+                //transition: all 0.5s;
             }
             input {
                 width: 520px;
@@ -195,7 +195,8 @@ input:focus::-webkit-input-placeholder {}
         }
         option {
             color: $maincolor;
-            text-align: center;
+            text-align-last: center;
+
         }
     }
 }
@@ -386,4 +387,20 @@ input:focus::-webkit-input-placeholder {}
     }
 }
 
+#drtest {
+    width: 200px;
+    height: 50px;
+    border:2px solid red;
+}
+.list {
+    display: none;
+    overflow: scroll;
+    width: 200px;
+    height: 100px;
+    border:2px solid black;
+    p {
+        text-align:center;
+        margin:10px;
+    }
+}
 @import "components/media";
