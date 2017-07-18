@@ -80,8 +80,7 @@ $(".info-form-input input").focus(function() {
 //         $(this).siblings("span").removeClass("span-top")
 //     }
 // })
-$(".info-form-input input").change().each(function() {
-
+$(".info-form-input input").each(function() {
     var value = $(this).val();
     if (value != "") {
         $(this).siblings("span").addClass("span-top")
