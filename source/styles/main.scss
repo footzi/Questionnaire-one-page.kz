@@ -3,6 +3,7 @@
 @import "components/vars";
 @import "../libs/jquery-ui.min";
 body {
+    overflow-x: hidden;
     font: {
         family: Roboto-Light;
         size: 16px;
@@ -40,10 +41,24 @@ body {
     color: $bordercolor;
 }
 
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+input:focus::-webkit-input-placeholder {}
+
 //header
 .header {
-    padding: 30px 0 30px 0;
-    border-bottom: 1px solid $bordercolor;
+    height: 60px;
+    nav {
+        padding: 30px 0 30px 0;
+        position: fixed;
+        width: 100%;
+        border-bottom: 1px solid $bordercolor;
+        background-color: rgba(white, 0.8);
+        z-index: 10;
+        transition: padding 0.5s;
+    }
     &-nav {
         display: flex;
         justify-content: center;
@@ -55,10 +70,10 @@ body {
         }
         a {
             font-size: 14px;
-            color: $maincolor;
+            color: $accentcolor;
             text-decoration: none;
             &:hover {
-                color: $accentcolor;
+                color: $maincolor;
             }
         }
     }
@@ -81,6 +96,14 @@ body {
     }
 }
 
+.navbar-fixed {
+    padding: 20px 0 20px 0 !important;
+}
+
+.active-link {
+    color: $maincolor !important;
+}
+
 //main
 .main {
     text-align: center;
@@ -91,22 +114,41 @@ body {
 //info
 .info {
     margin-top: $sectionmargin;
-    .info-form {
+    &-form {
         margin-top: $contetnmargin;
-        input {
-            width: 520px;
-            height: 60px;
-            font: {
-                family: Roboto-Regular;
-                size: 24px;
-            }
-            border: 1px solid $bordercolor;
-            border-radius: 10px;
+        &-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
             margin-bottom: 25px;
-            text-align: center;
-            color: $maincolor;
+            span {
+                font-family: Roboto-Regular;
+                font-size: 24px;
+                color: #d9d9d9;
+                position: absolute;
+                transition: all 0.5s;
+            }
+            input {
+                width: 520px;
+                height: 60px;
+                font: {
+                    family: Roboto-Regular;
+                    size: 20px;
+                }
+                border: 1px solid $bordercolor;
+                border-radius: 5px;
+                text-align: center;
+                color: $maincolor;
+                padding-top: 20px;
+                &:focus {
+                    border-color: $accentcolor;
+                    border-radius: 5px;
+                    outline: none;
+                }
+            }
         }
-        .form-select {
+        &-select {
             position: relative;
             text-align: center;
             text-align-last: center;
@@ -131,7 +173,7 @@ body {
                 width: 100%;
                 height: 100%;
                 border: 1px solid $bordercolor;
-                border-radius: 10px;
+                border-radius: 5px;
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 font: {
@@ -140,14 +182,15 @@ body {
                 }
             }
         }
-        .form-select select::-ms-expand {
+        &-select select::-ms-expand {
             display: none;
         }
-        .form-select select:focus {
+        &-select select:focus {
+            border-color: $accentcolor;
+            border-radius: 10px;
             outline: 0;
-            border-color: #2cb0d8;
         }
-        .form-select select:hover {
+        &-select select:hover {
             cursor: pointer;
         }
         option {
@@ -155,6 +198,11 @@ body {
             text-align: center;
         }
     }
+}
+
+.span-top {
+    top: 6px;
+    font-size: 14px !important;
 }
 
 //about

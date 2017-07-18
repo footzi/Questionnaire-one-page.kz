@@ -6,9 +6,12 @@
     body {
         padding: 0 20px;
     }
-    // .main {
-    //     width: 100%;
-    // }
+    .header {
+        height: inherit;
+        nav {
+            position: relative;
+        }
+    }
     .header .nav-button {
         display: flex;
     }
@@ -25,15 +28,19 @@
     .h1 {
         margin-top: 50px;
     }
-    .info .info-form input {
-        width: 100%;
+    .info .info-form {
+        input {
+            width: 100%;
+        }
+        .form-select {
+            width: 100%;
+        }
     }
     .experience-content {
         flex-direction: column;
-        //text-align:center;
         .column {
             width: 200px;
-            margin:0 auto;
+            margin: 0 auto;
         }
     }
     .js-slider .slider {
@@ -93,6 +100,10 @@
 }
 
 @media only screen and (max-width:480px) {
+    .info .info-form input,
+    select {
+        font-size: 18px !important;
+    }
     .experience-content {
         .column {
             margin-left: 0;

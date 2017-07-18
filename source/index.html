@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header scroll-block">
         <nav>
             <a class="nav-button">
                 <span></span>
@@ -17,7 +17,7 @@
                 <span></span>
             </a>
             <ul class="header-nav">
-                <li><a href="#" data-scroll=".info">Личная информация</a></li>
+                <li><a class="active-link" href="#" data-scroll=".header">Личная информация</a></li>
                 <li><a href="#" data-scroll=".experience">Опыт</a></li>
                 <li><a href="#" data-scroll=".js">JavaScript</a></li>
                 <li><a href="#" data-scroll=".about">О себе</a></li>
@@ -28,12 +28,16 @@
         <div class="main">
             <form action="url" method="post">
                 <h1 class="h1">Анкета</h1>
-                <section class="info">
+                <section class="info scroll-block">
                     <img сlass="info-icon" src="images/icon1.png" alt="Личная ифнормация">
                     <h2 class="h2">Личная информация</h2>
                     <div class="info-form">
-                        <input type="text" name="name" placeholder="ФИО" value="Манаков Владислав Сергеевич">
-                        <div class="form-select">
+                        <div class="info-form-input">
+                            <input type="text" name="name">
+                            <span>ФИО</span>
+                        </div>
+
+                        <div class="info-form-select">
                             <select name="year">
                                 <option disabled>Год Рождения</option>
                                 <option selected value="1990">1990</option>
@@ -43,12 +47,21 @@
                                 <option value="1994">1994</option>
                             </select>
                         </div>
-                        <input type="text" name="city" placeholder="Место проживания" value="Санкт-Петербург">
-                        <input type="text" name="skype" placeholder="Skype" value="footzi55">
-                        <input type="email" name="email" placeholder="E-mail" value="footzi2014@outlook.com">
+                        <div class="info-form-input">
+                            <input type="text" name="city" value="Санкт-Петербург">
+                            <span>Место проживания</span>
+                        </div>
+                        <div class="info-form-input">
+                            <input type="text" name="skype" value="footzi55">
+                            <span>Skype</span>
+                        </div>
+                        <div class="info-form-input">
+                            <input type="email" name="email" value="footzi2014@outlook.com">
+                            <span>E-mail</span>
+                        </div>
                     </div>
                 </section>
-                <section class="experience">
+                <section class="experience scroll-block">
                     <img src="images/icon2.png" alt="Об опыте">
                     <h2 class="h2">Расскажите о своем опыте</h2>
                     <div class="experience-content">
@@ -69,7 +82,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="js">
+                <section class="js scroll-block">
                     <img src="images/icon3.png" alt="О знании JS">
                     <h2 class="h2">Уровень владения JavaScript</h2>
                     <div class="js-slider">
@@ -89,7 +102,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="about">
+                <section class="about scroll-block">
                     <img src="images/icon4.png" alt="О знании JS">
                     <h2 class="h2">Расскажите о себе</h2>
                     <div class="about-content">
