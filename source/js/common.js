@@ -6,7 +6,7 @@ $(".header-nav a").on("click", function(e) {
     if ($(window).width() <= 768) {
         $(".header-nav").hide();
     }
-})
+});
 
 
 //фиксированный навбар + добавление активной ссылки
@@ -34,7 +34,74 @@ $(".header-nav a").on("click", function(e) {
     $('body,html').animate({ scrollTop: top }, 1500);
     $(".header-nav a").removeClass("active-link");
     $(this).addClass("active-link");
-})
+});
+
+
+//работа с input
+
+//если есть фокус, поднимаем placeholder
+$(".info-form-input input").focus(function() {
+    $(this).siblings("span").addClass("span-top");
+});
+
+//у всех заполненных input поднимаем placeholder
+$(".info-form-input input").each(function() {
+    var value = $(this).val();
+    if (value != "") {
+        $(this).siblings("span").addClass("span-top");
+    } else {
+        $(this).siblings("span").removeClass("span-top");
+    }
+});
+
+//если input был пустой, то при изменении либо поднимаем либо опускаем placeholder
+$(".info-form-input input").change(function() {
+    var value = $(this).val();
+    if (value != "") {
+        $(this).siblings("span").addClass("span-top");
+    } else {
+        $(this).siblings("span").removeClass("span-top");
+    }
+});
+
+
+//имитация select
+$(".info-form-select input").on("click", function() {
+    $(".list").fadeToggle();
+});
+
+//переворот стрелки
+$(document).on("click", function() {
+    var open = $(".list").is(":visible");
+    if (open) {
+        $(".info-form-select img").addClass("rotate-arrow");
+    } else {
+        $(".info-form-select img").removeClass("rotate-arrow");
+    }
+});
+
+//заполнение input
+$(".list p").on("click", function() {
+    var value = $(this).attr("data-list");
+    $(".info-form-select input").val(value);
+    $(".list").hide();
+});
+
+//закрытие выпадающего при клике на свободную область списка
+$(document).click(function(event) {
+    if ($(event.target).closest(".info-form-select").length) return;
+    $(".list").hide();
+    $(".info-form-select img").removeClass("rotate-arrow");
+    event.stopPropagation();
+});
+
+//прокрутка
+$(".list").niceScroll({
+    cursorcolor: "#d9d9d9",
+    cursorwidth: "5",
+    cursorfixedheight: "120",
+    scrollspeed: "10"
+});
 
 
 //slider
@@ -48,7 +115,7 @@ $(".slider").slider({
     slide: function(event, ui) {
         $("#amount").val(ui.value + "%");
     }
-})
+});
 $(".slider-v").slider({
     orientation: "vertical",
     min: 0,
@@ -60,42 +127,6 @@ $(".slider-v").slider({
     slide: function(event, ui) {
         $("#amount").val(ui.value + "%");
     }
-})
+});
 $("#amount").val($(".slider").slider("value") + "%");
 $("#amount2").val($(".slide-v").slider("value") + "%");
-
-
-$(".info-form-input input").focus(function() {
-    $(this).siblings("span").addClass("span-top");
-})
-
-$(".info-form-input input").each(function() {
-    var value = $(this).val();
-    if (value != "") {
-        $(this).siblings("span").addClass("span-top");
-    } else {
-        $(this).siblings("span").removeClass("span-top");
-    }
-})
-
-$(".info-form-input input").change(function() {
-    var value = $(this).val();
-    if (value != "") {
-        $(this).siblings("span").addClass("span-top");
-    } else {
-        $(this).siblings("span").removeClass("span-top");
-    }
-})
-
-
-
-$("#drtest").on("click", function() {
-    $(".list").fadeToggle();
-})
-$(".list p").on("click", function() {
-    var value=$(this).attr("data-list");
-    // $("#drtest span").empty().html(value);
-    var valueInput=$("#drtest input").val();
-    valueInput=value
-
-})

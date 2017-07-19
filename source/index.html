@@ -34,20 +34,27 @@
                     <div class="info-form">
                         <div class="info-form-input">
                             <input type="text" name="name">
+
                             <span>ФИО</span>
+
                         </div>
 
                         <div class="info-form-select">
-                            <select name="year">
-                                <option id="testinput" disabled></option>
-                                <option selected value="1990">1990</option>
-                                <option value="1991">
-                                    <span>1991</span>
-                                </option>
-                                <option value="1992">1992</option>
-                                <option value="1993">1993</option>
-                                <option value="1994">1994</option>
-                            </select>
+                            <input type="text" id="drtest" placeholder="Год рождения">
+                            <img src="images/arrow-down.png" alt="">
+                            <div class="list">
+                                <p data-list="1985">1985</p>
+                                <p data-list="1986">1986</p>
+                                <p data-list="1987">1987</p>
+                                <p data-list="1988">1988</p>
+                                <p data-list="1989">1989</p>
+                                <p data-list="1990">1990</p>
+                                <p data-list="1991">1991</p>
+                                <p data-list="1992">1992</p>
+                                <p data-list="1993">1993</p>
+                                <p data-list="1994">1994</p>
+                            </div>
+
                         </div>
                         <div class="info-form-input">
                             <input type="text" name="city" value="Санкт-Петербург">
@@ -119,15 +126,7 @@
             </form>
         </div>
     </main>
-
-    <input id="drtest" placeholder="year">
-        <!-- <span>Год рождения</span> --> 
-        <img id="open" src="images/arrow-down.png" alt="">
-    <div class="list">
-        <p data-list="Год-рождения">Год рождения</p>
-        <p data-list="1990">1990</p>
-        <p data-list="1991">1991</p>
-    </div> 
     <script type="text/javascript" src="js/main.min.js"></script>
 </body>
+
 </html>

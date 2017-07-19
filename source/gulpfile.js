@@ -35,6 +35,7 @@ gulp.task("js", function() {
     return gulp.src([
             'libs/jquery.min.js',
             'libs/jquery-ui.min.js',
+            'libs/jquery.nicescroll.min.js',
             'js/**/*'
         ])
         .pipe(concat('main.min.js'))

@@ -45,8 +45,6 @@ input:focus::-moz-placeholder {
     color: transparent;
 }
 
-input:focus::-webkit-input-placeholder {}
-
 //header
 .header {
     height: 60px;
@@ -156,47 +154,45 @@ input:focus::-webkit-input-placeholder {}
             color: $maincolor;
             height: 60px;
             margin: 0 auto 25px auto;
-            &:after {
-                content: "";
-                pointer-events: none;
-                width: 16px;
-                height: 11px;
-                display: inline-block;
-                background-image: url("../images/arrow-down.png");
-                position: absolute;
-                top: 43%;
-                right: 18px;
-                z-index: 1;
-                margin-top: -2px;
-            }
-            select {
-                width: 100%;
-                height: 100%;
-                border: 1px solid $bordercolor;
-                border-radius: 5px;
-                -webkit-appearance: none;
-                -moz-appearance: none;
+            input {
                 font: {
                     family: Roboto-Regular;
                     size: 24px;
                 }
+                width: 100%;
+                height: 60px;
+                border: 1px solid $bordercolor;
+                border-radius: 5px;
+                text-align: center;
+                color: $maincolor;
             }
-        }
-        &-select select::-ms-expand {
-            display: none;
-        }
-        &-select select:focus {
-            border-color: $accentcolor;
-            border-radius: 10px;
-            outline: 0;
-        }
-        &-select select:hover {
-            cursor: pointer;
-        }
-        option {
-            color: $maincolor;
-            text-align-last: center;
-
+            img {
+                cursor: pointer;
+                pointer-events: none;
+                position: absolute;
+                top: 44%;
+                left: 90%;
+                transition: all 0.5s;
+            }
+            .list {
+                display: none;
+                overflow-y: scroll;
+                height: 300px;
+                padding-top: 30px;
+                border: 1px solid $bordercolor;
+                border-radius: 5px;
+                box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+                background-color: white;
+                position: relative;
+                z-index: 10;
+                p {
+                    text-align: center;
+                    margin: 10px;
+                    color: #435993;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
@@ -204,6 +200,10 @@ input:focus::-webkit-input-placeholder {}
 .span-top {
     top: 6px;
     font-size: 14px !important;
+}
+
+.rotate-arrow {
+    transform: rotate(180deg);
 }
 
 //about
@@ -222,24 +222,27 @@ input:focus::-webkit-input-placeholder {}
             label {
                 margin-top: 14px;
                 text-align: left;
-                &:before {
+                &::before {
                     content: "";
                     display: inline-block;
                     width: 20px;
                     height: 20px;
                     border: 1px solid $accentcolor;
-                    border-radius: 10%;
+                    border-radius: 3px;
                     vertical-align: middle;
                     text-align: left;
                     margin-right: 10px;
+                    border-width: 1px;
                 }
             }
+            label:hover:before {
+                background-color: rgba($accentcolor, 0.3);
+            }
             input[type=checkbox]:checked+label:before {
-                content: "\2713";
-                font-size: 18px;
-                line-height: 18px;
-                color: $maincolor;
-                text-align: center;
+                background-color: $accentcolor;
+                background-image: url("../images/check.png");
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
             }
         }
     }
@@ -387,20 +390,4 @@ input:focus::-webkit-input-placeholder {}
     }
 }
 
-#drtest {
-    width: 200px;
-    height: 50px;
-    border:2px solid red;
-}
-.list {
-    display: none;
-    overflow: scroll;
-    width: 200px;
-    height: 100px;
-    border:2px solid black;
-    p {
-        text-align:center;
-        margin:10px;
-    }
-}
 @import "components/media";
