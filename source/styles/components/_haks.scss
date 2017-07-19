@@ -1,0 +1,16 @@
+/* стили только для IE10 IE11 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.info-form-input {
+		display: block !important;
+		span {
+			top:25%;
+			width: 100%;
+			margin:0 auto;
+			pointer-events: none;
+		}
+	}
+	.span-top {
+		top: 5px !important;
+	}
+
+}

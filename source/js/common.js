@@ -1,3 +1,10 @@
+$(document).ready(function(){
+
+//preloader
+$(window).on("load", function(){
+    $(".preloader").delay(1000).fadeOut();
+});
+
 //открытие меню
 $(".nav-button").on("click", function() {
     $(".header-nav").fadeToggle();
@@ -43,7 +50,14 @@ $(".header-nav a").on("click", function(e) {
 $(".info-form-input input").focus(function() {
     $(this).siblings("span").addClass("span-top");
 });
-
+//после потери фокуса, если ничего не ввели, то поднимает placeholder
+$(".info-form-input input").blur(function() {
+    console.log("poter");
+    var value = $(this).val();
+    if (value == "") {
+        $(this).siblings("span").removeClass("span-top");
+    }
+})
 //у всех заполненных input поднимаем placeholder
 $(".info-form-input input").each(function() {
     var value = $(this).val();
@@ -61,7 +75,7 @@ $(".info-form-input input").change(function() {
         $(this).siblings("span").addClass("span-top");
     } else {
         $(this).siblings("span").removeClass("span-top");
-    }
+    };
 });
 
 
@@ -130,3 +144,5 @@ $(".slider-v").slider({
 });
 $("#amount").val($(".slider").slider("value") + "%");
 $("#amount2").val($(".slide-v").slider("value") + "%");
+
+});

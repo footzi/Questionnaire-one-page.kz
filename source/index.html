@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire-one-page.kz</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
-
 <body>
+    <div class="preloader">
+        <img src="images/preloader.svg" alt="">
+    </div>
     <header class="header scroll-block">
         <nav>
             <a class="nav-button">
@@ -29,18 +30,15 @@
             <form action="url" method="post">
                 <h1 class="h1">Анкета</h1>
                 <section class="info scroll-block">
-                    <img сlass="info-icon" src="images/icon1.png" alt="Личная ифнормация">
+                    <img src="images/icon1.png" alt="Личная ифнормация">
                     <h2 class="h2">Личная информация</h2>
                     <div class="info-form">
                         <div class="info-form-input">
-                            <input type="text" name="name">
-
                             <span>ФИО</span>
-
+                            <input type="text" name="name" value="Манаков Владислав Сергеевич">
                         </div>
-
                         <div class="info-form-select">
-                            <input type="text" id="drtest" placeholder="Год рождения">
+                            <input type="text" placeholder="Год рождения" value="1990">
                             <img src="images/arrow-down.png" alt="">
                             <div class="list">
                                 <p data-list="1985">1985</p>
@@ -54,19 +52,18 @@
                                 <p data-list="1993">1993</p>
                                 <p data-list="1994">1994</p>
                             </div>
-
                         </div>
                         <div class="info-form-input">
-                            <input type="text" name="city" value="Санкт-Петербург">
                             <span>Место проживания</span>
+                            <input type="text" name="city" value="Санкт-Петербург">                     
                         </div>
                         <div class="info-form-input">
-                            <input type="text" name="skype" value="footzi55">
                             <span>Skype</span>
+                            <input type="text" name="skype" value="footzi55">
                         </div>
                         <div class="info-form-input">
-                            <input type="email" name="email" value="footzi2014@outlook.com">
                             <span>E-mail</span>
+                            <input type="email" name="email" value="footzi2014@outlook.com">
                         </div>
                     </div>
                 </section>
@@ -116,17 +113,16 @@
                     <h2 class="h2">Расскажите о себе</h2>
                     <div class="about-content">
                         <p class="about-content-text">Напишите несколько предложений, чем привлекла наша вакансия, и что вы ждете от работы у нас.</p>
-                        <textarea rows="15" name="about" placeholder="Понравилась тем, что..." readonly>Я начинающий web-разработчик. Легко и быстро обучаюсь, очень ответственно подхожу к своей работе. Есть большое желание развиваться в сфере web разработки и не только, а также стать профессионалом своего дела. В ближайшем будущем планирую активно развиваться в сфере frontend'a и изучать СMS (ModX, OpenCart, Bitrix), Node.js, базы данных (MongoDB и MySQL), стандарт ES2016/17. В первую очередь от работы я ожидаю получить более глубокие знания в web технологиях, а так же научиться работать в команде. Главным критерием выбора именно Вашей вакансии стала возможность работать удаленно, так же частичная занятость.
+                        <textarea rows="15" name="about" placeholder="Понравилась тем, что..." readonly>Я начинающий web-разработчик. Легко и быстро обучаюсь, очень ответственно подхожу к своей работе. Есть большое желание развиваться в сфере web разработки и не только, а также стать профессионалом своего дела. В ближайшем будущем планирую активно развиваться в сфере frontend'a и более глубоко изучать JS, фраемворки React.js + Redux, стандарт ES2016/17/18. В первую очередь от работы я ожидаю получить более глубокие знания в web технологиях, а так же научиться работать в команде. Главным критерием выбора именно Вашей вакансии стала возможность работать удаленно, так же частичная занятость.
                         </textarea>
                     </div>
                 </section>
-                <section class="submit">
+                <div class="button-submit">
                     <button type="submit">Готово</button>
-                </section>
+                </div>
             </form>
         </div>
     </main>
     <script type="text/javascript" src="js/main.min.js"></script>
 </body>
-
 </html>

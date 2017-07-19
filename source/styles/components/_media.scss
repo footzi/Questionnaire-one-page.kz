@@ -32,9 +32,6 @@
         input {
             width: 100%;
         }
-        .form-select {
-            width: 100%;
-        }
     }
     .experience-content {
         flex-direction: column;
@@ -100,8 +97,11 @@
 }
 
 @media only screen and (max-width:480px) {
+    .info-form-select {
+        width: 100%;
+    }
     .info .info-form input,
-    select {
+    {
         font-size: 18px !important;
     }
     .experience-content {

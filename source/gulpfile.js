@@ -26,7 +26,6 @@ gulp.task('sass', function() {
         .pipe(browserSync.reload({
             stream: true
         }))
-        //.pipe(rename("main.min.css"))
         .pipe(gulp.dest('../public/styles'));
 });
 
