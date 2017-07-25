@@ -1790,7 +1790,7 @@ input:focus::-moz-placeholder {
 
 .info-form-select input {
   font-family: Roboto-Regular;
-  font-size: 24px;
+  font-size: 20px;
   width: 100%;
   height: 60px;
   border: 1px solid #d9d9d9;

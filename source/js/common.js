@@ -1,10 +1,9 @@
-$(document).ready(function(){
-
 //preloader
 $(window).on("load", function(){
     $(".preloader").delay(1000).fadeOut();
 });
 
+$(document).ready(function(){
 //открытие меню
 $(".nav-button").on("click", function() {
     $(".header-nav").fadeToggle();
